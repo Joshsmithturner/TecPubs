@@ -1,0 +1,630 @@
+
+/*	PUBLICATION COVER PAGE	*/
+
+/* this makes the info elements visible */
+.info-elements {
+    display:unset;
+    aria-hidden: false;
+    }
+
+span.titleabbrev {
+    display:none;
+    }
+
+/* this keeps the extra title, subtitle, and remarks hidden */
+.info-elements .title,
+.info-elements .subtitle, 
+.info-elements .remark {
+    display: none;
+    aria-hidden: true;
+    }
+
+
+
+/* this styles the positions of the cover elements */
+/* NOTE: This code is highly affected by any changes to front cover material. */
+
+/* this aligns the part number, publication date, and issue number relative to the top left corner of the body */
+span.volumenum {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    }
+
+p.pubdate {
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    }
+
+.edition {
+    position: absolute;
+    top: 62px;
+    right: 40px;
+    }
+
+/* this adjusts the title and subtitle margin-right to allow space for the info elements without overlap */
+.titlepage h1.title, 
+.titlepage h3.subtitle {
+    margin-right: 125px;
+    }
+
+
+/* this styles the info elements */
+span.volumenum,
+p.pubdate,
+.edition {
+    color:#808080;
+    }
+
+/* this styles the serial numbers (front cover recto) */
+.info-elements .cover.front.recto {
+    font-size: 12pt;
+    margin-bottom: 12pt;
+    }
+
+/* this makes the cover image 100% wide */
+.mediaobject.titleimage .materialboxed {
+    width: 100%;
+    }
+
+/* this styles the inside front cover content (front cover verso) */
+
+.info-elements .front.cover.verso .para {
+    margin-bottom: 6pt;
+    }
+
+.info-elements .warning .listitem {
+    line-height: 2em;
+    list-style-position: inside;
+    display: list-item;
+    margin-left: 14pt;
+    }
+
+/*	END OF PUBLICATION COVER PAGE	*/
+
+
+/*	IMAGE STYLING		*/
+
+/* default image width 75% of page and centred */
+.materialboxed {
+    width: 75%;
+    margin: auto;
+    }
+
+/* image borders 100% of page width */
+.material-placeholder {
+    border: 1px solid #ddd;
+    }
+
+/* need an exception from the above for images inside tables */
+.informaltable .material-placeholder {
+    border: 0pt;
+    }
+
+table.image-viewport tbody {
+    border: 0pt;
+    }
+
+/* Add border back in for wide images (only images inside an informalfigure) */
+.informaltable div.informalfigure > div.mediaobject > table.image-viewport > tbody > tr > td > div.material-placeholder {
+    border: 1px solid #ddd;
+    }
+
+
+/* this removes the border from images inside admonitions*/
+div.caution div.material-placeholder {
+    border: 0pt;
+    }
+div.note div.material-placeholder {
+    border: 0pt;
+    }
+div.warning div.material-placeholder {
+    border: 0pt;
+    }
+
+/* this removes the border from mediaobjects with the image-label role */
+.image-label .material-placeholder {
+    border: 0;
+}
+
+/* this adds a margin-after */
+.mediaobject {
+    margin-bottom: 10px;
+}
+
+
+/* this changes the background color of the lightbox so images don't need a background */
+.materialboxed.active {
+    background-color: white;
+}
+
+/*	END OF IMAGE STYLING	*/
+
+
+
+
+/*	PROCEDURE STYLING		*/
+
+/* this styles the labels for substeps (a, b, etc.) */
+li.step::marker {
+    font-weight: bold;
+}
+
+/*	END OF PROCEDURE STYLING	*/
+
+
+
+
+/*	CHECKLIST STYLING		*/
+
+ul.checklist > li {
+    font-size: 11pt;
+    font-family: Arial;
+    padding: 10px 8px 10px 15px;
+    border-color: #74AD43
+    }
+
+.check-item-content {
+    padding-top: 4pt;
+    }
+
+.check-item-content p, 
+.check-item-content .itemizedlist {
+    margin-bottom: 4pt;
+}
+
+ul.checklist li.checked:hover, ul.checklist > li:hover {
+    background-color: #cff2b1; 
+    }
+
+
+
+/* This styles the checkbox */
+.checklist-checkbox-wrapper input[type="checkbox"]:checked + label {
+    background-color: #fff;
+    border-color: #74AD43;
+    }
+.checklist-checkbox-wrapper input[type="checkbox"]:checked + label:after {
+    opacity: 1;
+    border-color: #74AD43;
+    }
+
+
+/*	END OF CHECKLIST STYLING	*/
+
+
+
+
+
+/*	 HEADING STYLING	*/
+
+h1, h2, h3, h4, h5 {
+    margin: 0.5em 0 0.5em;
+}
+
+/* h1 is only used on the publication cover page */ 
+.titlepage h1.title {
+    color: #000000;
+    text-transform: uppercase;
+    font-weight:bold;
+    line-height: 1.3em;
+    margin: 0em 0 0em;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: #74AD43;
+    text-decoration-thickness: 1px;
+    }
+
+#topic-content > section > .titlepage h1.title {
+    margin: 0em 0 0em;
+    }
+
+.titlepage h3.subtitle {
+    margin: 0.25em 0 0.25em;
+    font-size:20pt;
+    }
+
+/* h2 styles SECTION TITLES */
+.titlepage h2.title {
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #000000;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+    text-decoration-color: #74AD43;
+    text-decoration-thickness: 1px;
+    line-height: 1.3em;
+    }
+    
+
+/* h3 styles SUBSECTION TITLES or top level topic titles */
+
+.titlepage h3.title {
+    color:#FF800D;
+    font-weight: bold;
+}
+
+.titlepage h4.title {
+    color: #74AD43;
+    font-weight: bold;
+    font-size: 14pt;
+    }
+
+.titlepage h5.title {
+    color: #000000;
+    }
+
+.titlepage h6.title {
+    color: black;
+    }
+
+
+/*	END OF HEADING STYLING	*/
+
+
+
+
+
+/* 	HELP CENTER THEME STYLING		*/
+
+/*	Portal styling	*/
+/*	NOTE: The welcome text on the portal is changed through javascript	*/
+
+/* this removes the portal header background (black) */
+.portal-header::after{
+    background: none;
+    }
+
+/* this changes the height and placement of the portal header and included elements */
+@media (min-width: 768px) {
+    .portal-header {
+        height: 350px;
+    }
+}
+
+.portal-header h1 {
+    margin-top: 1.7em;
+    }
+
+/* this changes the margin between the portal header and the featured content */
+.portal-publications {
+    margin-top: 30px;
+    }
+
+/* this changes the colour of the portal footer (black) */
+.portal-footer {
+    background: #000000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    }
+
+/* this styles the portal search button (orange) */
+.portal-header .portal-search button {
+    background-color: #FF800D;
+    }
+
+/* this styles the portal search button on hover (green) */
+.portal-header .portal-search button:hover {
+    background-color: #74AD43;
+    }
+
+/*	this removes the portal categories	*/
+.portal-publications .inner-row {    
+    display:none;
+    }
+
+.show-all-category {
+    display:none;
+    }
+
+/* this styles various elements to be the primary accent colour (orange)*/
+/* elements include hyperlinks, portal category icons, active TOC page, level 1-3 headings, and Next/Prev page buttons */
+a,
+.text-primary,
+.btn-primary .badge,
+.btn-link,
+.pagination>li>a,
+.pagination>li>span,
+.nav-site-sidebar .active>a,
+.portal-single-publication .publication-icon i,
+.portal-single-publication .publication-icon .fa,
+.publication-contents a:hover,
+.publication-contents h4 a {
+    color: #FF800D;
+    }
+
+/* this styles various elements to be the secondary accent colour (green) when hovered over or selected with keystrokes */
+/* elements include portal category titles, breadcrumbs, page hyperlinks, search results */
+a:hover,
+a:focus,
+a.text-primary:hover,
+a.text-primary:focus,
+.btn-link:hover,.btn-link:focus,
+.pagination>li>a:hover,
+.pagination>li>span:hover,
+.pagination>li>a:focus,
+.pagination>li>span:focus {
+    color: #74AD43;
+    }
+
+/* this styles various elements to have a background of the secondary accent colour (green) when hovered over or selected with keystrokes */
+/* elements include portal search button, Next page and Prev page buttons, and other (unused) elements */
+a.bg-primary:hover,
+a.bg-primary:focus,
+.btn-primary:hover,
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.open>.dropdown-toggle.btn-primary:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.open>.dropdown-toggle.btn-primary:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus,
+.open>.dropdown-toggle.btn-primary.focus,
+.portal-header .portal-search button:hover, {
+    background-color: #74AD43;
+    }
+
+
+/* 	Page styling	*/
+
+/* This limits max width of body content for readability */
+body.theme2 {
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* This changes the styling of the TOC sidebar top headings (sections) */
+.theme2 .nav-site-sidebar>li>a {
+    font-weight: bold;
+    }
+
+/* This changes the colour of the active topic in the sidebar nav */
+.theme2 .section-nav.nav li.active>a {
+    color: #74AD43;
+    }
+.theme2 .section-nav.nav>li.active>a:before {
+    background: #74AD43;
+    }
+
+/* this styles the toolbar/breadcrumbs/search bar to be black */
+.bg-primary,
+.btn-primary,
+.publications-condensed .portal-single-publication a,
+.toolbar,
+.tool-search-form .search-field,
+.colored-top .site-sidebar-header {
+    background-color: black;
+    }
+
+/* This styles the background of the Prev/Next page buttons on hover */
+.pager li>a:hover,
+.pager li>span:hover {
+    background-color: #74AD43;
+    border-radius: 4px;
+    }
+
+/* this styles the page footer and language selection switch (if used) */
+.pull-right {
+    bottom: 10px;
+    }
+.theme2 .site-footer {
+    padding-bottom: 5px
+    }
+
+/* ??? */
+.nav-site-sidebar li a:focus{
+    background-color: transparent;
+}
+
+
+/*	Feedback panel styling	*/
+
+/* This styles the yes/no feedback buttons */
+div.feedback-panel .btn {
+    border: 1px solid #74AD43;
+    }
+div.feedback-panel .btn.active, div.feedback-panel .btn:active {
+    background-color: #74AD43;
+    font-weight: bold;
+    }
+
+/*	END OF HELP CENTER THEME STYLING	*/
+
+
+
+
+
+/* 	INFORMAL TABLE STYLING	*/
+
+/* 	default table styling for informaltables (tabstyle1) 	*/
+
+.informaltable {
+    width: 100%;
+    }
+
+/* this adds borders to the table header and body groups */
+.informaltable thead {
+    border: 1px solid #ddd;
+    }
+.informaltable tbody {
+    border: 1px solid #ddd;
+    }
+
+/* this styles the table header */
+.informaltable th { 
+    background-color: #f2f2f2;
+    padding: 4px;
+    text-align: center;
+    }
+
+*/ this styles the table body */
+.informaltable tbody td {
+    padding: 4px;
+    }
+
+
+
+/* 	styling for tabstyle2 	*/
+
+/* this unsets width (does NOT apply the default 100%) */
+.tabstyle2 {
+    width:unset;
+    min-width:50%;
+    }
+
+.tabstyle2 thead th {
+    background-color: #555555;
+    color: white;
+    }
+
+/* this sets the row background colour for alternating (even) rows */
+.tabstyle2 tbody tr:nth-child(even) {
+    background-color: #eeeeee;
+    }
+
+/* this targets the internal borders of each cell in the header, body */
+.informaltable.tabstyle2 > tbody > tr > td,
+.informaltable.tabstyle2 > tbody > tr > th,
+.informaltable.tabstyle2 > thead > tr > td, 
+.informaltable.tabstyle2 > thead > tr > th {
+    /* Your styles here */
+    border: 1px solid #ddd;
+    }
+
+
+
+/*	styling for tabstyle3 and tabstyle4		*/
+/* 	NOTE: tabstyle3 STYLING AFFECTS WIDE TABLES	*/
+/* 	Ideally, tabstyle3 would have width unset. But wide tables need 100% width for the container. */
+
+/* this unsets width (does NOT apply the default 100%) */
+.tabstyle4 {
+    width:unset;
+    }
+
+/* this styles the header cells */
+.tabstyle3 thead th, .tabstyle4 thead th {
+    padding-left: 0px;
+    padding-right: 20px;
+    }
+
+/* this styles the body cells */
+.tabstyle3 td, .tabstyle4 td {
+    padding-left: 0px;
+    padding-right: 20px;
+    }
+
+/* this resets group borders to 0 */
+.informaltable.tabstyle3 > tbody, .informaltable.tabstyle4 > tbody {
+    border: 0px;
+    }
+.informaltable.tabstyle3 > thead, .informaltable.tabstyle4 > thead {
+    border: 0px;
+    }
+
+
+
+/*	styling for tabstyle5	*/
+
+.tabstyle5 td { 
+    background-color: #f2f2f2;
+    text-align: center;
+    font-weight: bold;
+    }
+
+
+
+/*	END OF INFORMAL TABLE STYLING	*/
+
+
+
+
+
+/* 	ADMONITION STYLING	*/
+
+/* This styles the border and the background  */
+
+.note {
+    background-color:#f2f2f2;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    border-left-color: #74AD43;
+    }
+
+.note.notice {
+    border-left-color: #3aa3e3;
+    }
+
+.warning {
+    background-color:#f2f2f2;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    border-left-color: #FF800D;
+    }
+
+.warning.danger {
+    background-color:#f2f2f2;
+    }
+
+.caution {
+    background-color:#f2f2f2;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    padding-top: 2px;
+    padding-bottom: 1px;
+    }
+
+/* This styles the symbol  */
+
+.note:before, .tip:before, .warning:before, .caution:before, .important:before {
+    top: 14px;
+}
+
+.note::before {
+    color:black;
+    }
+
+.notice::before {
+    color:black;
+    }
+
+.warning::before {
+    color:black;
+    }
+
+.warning.danger:before {
+    color:black;
+    }
+
+.caution::before {
+    color:black;
+    }
+
+/* This styles the label (heading)  */
+
+.note h3 {
+    font-weight:bold;
+    }
+
+.notice h3 {
+    font-weight:bold;
+    }
+
+.warning h3 {
+    font-weight:bold;
+    }
+
+.caution h3 {
+    font-weight:bold;
+    }
+
+/*	END OF ADMONITION STYLING	*/
